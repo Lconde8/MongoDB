@@ -19,3 +19,7 @@ db.products.insertMany([
         price: 300
     }
 ])
+
+/*{
+    ordered: false //sirve para ignorar las duplicidades pero seguir ingresando los que sigan despues de el 
+}*/
