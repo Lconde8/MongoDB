@@ -1,0 +1,9 @@
+use("platzi_store")
+
+//db.monthlyBudget.find({ spent: {$gte: 100} })
+//expresive operator works for have comparations between 2 fields of the document
+db.monthlyBudget.find({ 
+    $expr: {
+        $gte: ["$spent", "$budget"]
+    } 
+})
