@@ -1,0 +1,16 @@
+use("sample_training")
+
+//db.trips.find({"start station location.type": "Point"})
+// el .0. sirve para consular el primer valor del array
+/*db.companies.find({
+    "relationships.0.person.first_name": "Mark"
+}, {
+    name: 1
+})*/
+//o simplemente puedes hacer la misma consulta de arriba sin el 0 y da el mismo valor 
+db.companies.find({
+    relationships: {
+    $elemMatch: {"person.first_name": "Mark"}}
+}, {
+    name: 1
+}).count()
